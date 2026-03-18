@@ -1,0 +1,19 @@
+[build]
+builder = "nixpacks"
+
+# Python versiyasini nixpacks orqali belgilash
+# (runtime.txt Railway nixpacks tomonidan e'tiborga olinmaydi)
+[build.nixpacksPlan.phases.setup]
+nixPkgs = ["python311"]
+
+[deploy]
+startCommand = "python bot.py"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[healthcheck]
+# Flask serveri to'liq tayyor bo'lgach tekshiradi
+# Bot + Flask birgalikda ~5-8 soniyada ishga tushadi
+httpPath = "/health"
+timeoutSeconds = 15
+initialDelaySeconds = 10

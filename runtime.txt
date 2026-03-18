@@ -1,0 +1,14 @@
+# BU FAYL RAILWAY TOMONIDAN E'TIBORGA OLINMAYDI!
+#
+# runtime.txt faqat Heroku uchun ishlaydi.
+# Railway nixpacks builder Python versiyasini quyidagicha belgilang:
+#
+#   VARIANT 1 (tavsiya etiladi): railway.toml ga qo'shing:
+#     [build.nixpacksPlan.phases.setup]
+#     nixPkgs = ["python311"]
+#
+#   VARIANT 2: Railway Dashboard → Variables:
+#     NIXPACKS_PYTHON_VERSION = 3.11
+#
+# Ikkala variant ham railway.toml da allaqachon sozlangan.
+python-3.11
